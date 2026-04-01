@@ -24,7 +24,7 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
         env:
-          SONAR_TOKEN: ${{e27c520e8497a39b9f12558542ff0cbb11f41bc1}}
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       # 5. Показати coverage прямо в логах (ВАЖЛИВО для демо)
       - name: Print coverage %
