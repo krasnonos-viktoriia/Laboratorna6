@@ -1,0 +1,57 @@
+name: Simple CI
+on: [push, pull_request]
+jobs:
+  test-and-metrics:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Клонування репозиторію (create runner)
+      # CI працює в копії репозиторію, а не в самому репозиторії
+      - uses: actions/checkout@v4
+
+      # 2. Node.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      # 3. Встановити залежності
+      - run: npm install
+
+      # 4. Запустити тести + coverage
+      - name: Run tests with coverage
+        run: npm run test:coverage
+
+      # 5. Показати coverage прямо в логах (ВАЖЛИВО для демо)
+      - name: Print coverage %
+        run: |
+          node -e "
+            const data = require('./coverage/coverage-summary.json');
+            console.log('Coverage:', data.total.lines.pct + '%');
+          "
+
+      # 6. Зберегти coverage як artifact
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+
+      # 7. Встановити cloc
+      - run: sudo apt-get update && sudo apt-get install -y cloc
+
+      # 8. Запустити cloc
+      - name: Run cloc
+        run: |
+          cloc src
+
+      # 9. Зберегти cloc (json)
+      - name: Save cloc report
+        run: |
+          mkdir -p cloc
+          cloc src --json --out=cloc/report.json
+
+      - name: Upload cloc
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloc-report
+          path: cloc/
