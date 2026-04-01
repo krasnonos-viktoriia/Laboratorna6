@@ -7,25 +7,29 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/krasnonos-viktoriia/Lab6.git"
+    "url": "git+https://github.com/krasnonos-viktoriia/Laboratorna6.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/krasnonos-viktoriia/Lab6/issues"
+    "url": "https://github.com/krasnonos-viktoriia/Laboratorna6/issues"
   },
-  "homepage": "https://github.com/krasnonos-viktoriia/Lab6#readme",
+  "homepage": "https://github.com/krasnonos-viktoriia/Laboratorna6#readme",
   "devDependencies": {
     "@sonar/scan": "^4.3.5",
     "eslint": "^10.1.0",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
     "prettier": "^3.8.1"
+  },
+  "jest": {
+    "coverageReporters": ["json-summary", "text", "lcov"]
   }
 }
