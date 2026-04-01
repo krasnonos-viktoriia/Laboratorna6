@@ -1,0 +1,31 @@
+{
+  "name": "lab6",
+  "version": "1.0.0",
+  "description": "* User-friendly\r * Local Storage Supported\r * Displays current Date and Time\r * Responsive, on all devices\r * Themes: Users can choose among different themes.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krasnonos-viktoriia/Lab6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/krasnonos-viktoriia/Lab6/issues"
+  },
+  "homepage": "https://github.com/krasnonos-viktoriia/Lab6#readme",
+  "devDependencies": {
+    "@sonar/scan": "^4.3.5",
+    "eslint": "^10.1.0",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "prettier": "^3.8.1"
+  }
+}
