@@ -1,5 +1,5 @@
 {
-  "name": "lab6",
+  "name": "laboratorna6",
   "version": "1.0.0",
   "description": "* User-friendly\r * Local Storage Supported\r * Displays current Date and Time\r * Responsive, on all devices\r * Themes: Users can choose among different themes.",
   "main": "index.js",
@@ -30,6 +30,7 @@
     "prettier": "^3.8.1"
   },
   "jest": {
+    "testMatch": ["**/tests/**/*.js"],
     "coverageReporters": ["json-summary", "text", "lcov"]
   }
 }
